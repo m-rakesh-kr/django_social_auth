@@ -1,28 +1,34 @@
 {% extends 'home.html' %}
 
 {% block body %}
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <form method="post">
-                    {% load crispy_forms_tags %}
-                    <h2>Login</h2>
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <button type="submit">Submit</button>
-                    <a href="{% url 'register' %}">
-                        Don't have account? Sign up.
-                    </a>
-                </form>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                {% load crispy_forms_tags %}
+                <p></p>
+                <p><b>(You can also login using Login API)</b></p>
+                <h2>Login</h2>
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit">Submit</button>
+                <a href="{% url 'register' %}">
+                    Don't have account? Sign up.
+                </a>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
             <div>
-                Also Login using
-            </div>
-            <div>
-                <p>If you have a Social Account then you can login also using that as below link:- </p>
+                <p></p>
+                <p><b>Do you want to Login using Social Account..?</b></p>
             </div>
             <div>
                 <a href="{% url 'social:begin' 'github' %}">GitHub</a>
+            </div>
+            <div>
+                <a href="{% url 'social:begin' 'google-oauth2' %}">Google</a>
             </div>
             <div>
                 <a href="{% url 'social:begin' 'facebook' %}">Facebook</a>
@@ -30,22 +36,18 @@
             <div>
                 <a href="{% url 'social:begin' 'twitter' %}">Twitter</a>
             </div>
-            <div>
-                <a href="{% url 'social:begin' 'google-oauth2' %}">Google</a>
-            </div>
 
         </div>
 
     </div>
 
 
+    {% endblock %}
 
-{% endblock %}
-
-{% block js %}
+    {% block js %}
     <script type="text/javascript">
         if (window.location.hash && window.location.hash == '#_=_') {
             window.location.hash = '';
         }
     </script>
-{% endblock %}
+    {% endblock %}

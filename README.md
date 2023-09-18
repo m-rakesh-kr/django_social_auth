@@ -194,3 +194,7 @@ To deactivate a user account, use the following API endpoint:
 Contributions to improve and expand this project are welcome. Feel free to create issues or submit pull requests.
 
 ---
+
+Thank You
+
+---
