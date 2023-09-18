@@ -21,7 +21,7 @@ Follow these steps to set up the project and configure social authentication pro
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/django_social_auth.git
+   git clone https://github.com/m-rakesh-kr/django_social_auth.git
    ```
 
 2. Navigate to the project directory:
